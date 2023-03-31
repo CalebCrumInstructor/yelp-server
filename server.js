@@ -17,6 +17,10 @@ app.get("/api", async (req, res) => {
 
     const { url } = req.query;
 
+    if (!url) {
+      return res.status(400).json({ message: "url parameter is required" });
+    }
+
     const { data } = await axios({
       method: 'get',
       url,
