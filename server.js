@@ -35,7 +35,7 @@ app.get("/api", async (req, res) => {
     res.json(data);
   } catch (err) {
     console.log(err);
-    res.status(500).json(err);
+    res.status(500).json(err.response.data);
   }
 
 });
